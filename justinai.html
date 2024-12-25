@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="lt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalėdinis sveikinimas!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎄</text></svg>"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Festive&family=Quicksand:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <style>
+      :root {
+        --color-blackblue: #0b1a28;
+        --color-darkblue: #102e47;
+        --color-blue: #273B5C;
+        --color-bluey: #4572ab;
+        --color-darkgreen: #294221;
+        --color-green: #385025;
+        --color-red: #891515;
+        --color-brightred: #b42d1a;
+        --color-cream: #c6b173;
+        --color-brightcream: #fce7a8;
+        --color-white: #fff;
+        --color-candle: #daa985;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      body,
+      button {
+        font-family: "Quicksand", serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+      }
+      header {
+        background: var(--color-bluey);
+      }
+      header,
+      section {
+        display: flex;
+        position: relative;
+      }
+      .container {
+        padding: 0 16px;
+        margin: 56px auto;
+        max-width: 1240px;
+        width: 100%;
+      }
+      header h1,
+      section h2 {
+        text-align: center;
+        width: auto;
+        max-width: 500px;
+      }
+      header h1 {
+        color: var(--color-white);
+        margin: 0 auto 56px;
+        font-size: 48px;
+      }
+      section h2 {
+        font-size: 40px;
+        margin: 0 auto 24px;
+      }
+      section p {
+        font-size: 16px;
+        text-align: center;
+      }
+      section:nth-child(3) {
+        background: var(--color-blue);
+        color: var(--color-white);
+      }
+      .colorful-box {
+        border-radius: 10px;
+        background: var(--color-candle);
+        color: var(--color-white);
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 16px;
+      }
+      header img {
+        max-width: 200px;
+        margin: 0 auto;
+        display: block;
+      }
+      .festive-regular {
+        font-family: "Festive", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      footer {
+        color: var(--color-white);
+        text-align: center;
+        background: var(--color-blackblue);
+        display: flex;
+      }
+      footer .container {
+        margin: 0 auto;
+      }
+      #surprise {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+      section video {
+        display: block;
+        margin: 32px auto;
+        max-height: 300px;
+        max-width: 300px;
+      }
+      .button-container {
+        margin: 48px auto 0;
+        display: block;
+      }
+      button {
+        border: unset;
+        border-radius: 10px;
+        background: var(--color-blue);
+        color: var(--color-white);
+        font-size: 20px;
+        padding: 16px 24px;
+        transition: all 0.2s ease-in;
+        cursor: pointer;
+        display: block;
+        margin: 0 auto;
+      }
+      button:hover,
+      button:focus {
+        background: var(--color-blackblue);
+      }
+      @media (min-width: 768px) {
+        header h1,
+        section h2 {
+          max-width: 750px;
+        }
+        header h1 {
+          font-size: 80px;
+        }
+        header img {
+          max-width: 420px;
+        }
+        section h2 {
+          font-size: 64px;
+        }
+        section p {
+          font-size: 20px;
+        }
+        .colorful-box {
+          max-width: 700px;
+          padding: 16px 32px;
+        }
+        section video {
+          margin: 56px auto;
+          max-height: 400px;
+          max-width: 400px;
+        }
+        .button-container {
+          margin: 56px auto 32px;
+        }
+        button {
+          font-size: 30px;
+          padding: 16px 32px;
+        }
+      }
+    </style>
+    <script>
+      function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+      }
+
+      var scalar = 2;
+      var gift = confetti.shapeFromText({ text: "🎁", scalar });
+      var christmasTree = confetti.shapeFromText({ text: "🎄", scalar });
+      var party = confetti.shapeFromText({ text: "🎉", scalar });
+      var heart = confetti.shapeFromText({ text: "😍", scalar });
+      var defaults = {
+        scalar: 2,
+        spread: 180,
+        particleCount: 30,
+        origin: { y: -0.1 },
+        startVelocity: -35,
+      };
+      function fire(event) {
+        event.preventDefault();
+        
+        confetti({
+          ...defaults,
+          shapes: [[
+            gift,
+            christmasTree,
+            party,
+            heart
+          ][getRandomInt(4)]],
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="container">
+          <h1 class="festive-regular">
+            Linksmų Kalėdų ir džiaugsmingų Naujųjų metų!
+          </h1>
+          <img
+            src="https://i.pinimg.com/originals/05/dd/af/05ddafab0c86e23e865c9990930a4386.gif"
+            alt="kaciukas"
+          />
+        </div>
+        <canvas id="surprise"></canvas>
+      </header>
+      <section>
+        <div class="container">
+          <h2 class="festive-regular">Sveikinimas Tau!</h2>
+          <div class="colorful-box">
+            <p>
+              Miela Justina, su šventėmis!!! 😁
+              <br><br>
+              Norėjau tave šiais metais pasveikinti Kalėdų proga kitaip,
+              todėl padariau tau šitą puslapiuką!
+              <br><br>
+              Taip pat viliuosi, kad šie metai tau buvo dosnūs ir sėkmingi,
+              o ateinantys bus dar geresni.
+              <br><br>
+              - Tautvydas
+            </p>
+          </div>
+          <div class="button-container">
+            <button>Staigmena!</button>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <h2 class="festive-regular">Dovanėlė nuo manęs!</h2>
+          <p>
+            Spėju, kad šiemet nebesusimatysim, bet tikiuos, kad pavyks tave pralinksminti! 😉
+          </p>
+          <video controls>
+            <source
+              src="https://packaged-media.redd.it/7a0xlxdrcr491/pb/m2-res_480p.mp4?m=DASHPlaylist.mpd&v=1&e=1735146000&s=8e893286cc52aa739cf94845e87aff3be4236f6b"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container"><p>© Tautvydas Dikšas 2024</p></div>
+    </footer>
+    <script>
+      const duration = 15 * 1000;
+      const animationEnd = Date.now() + duration;
+      let skew = 1;
+
+      const randomInRange = (min, max) => Math.random() * (max - min) + min;
+
+      const letItSnow = () => {
+        const canvas = document.getElementById("surprise");
+        canvas.confetti =
+          canvas.confetti || confetti.create(canvas, { resize: true });
+
+        const timeLeft = animationEnd - Date.now();
+        const ticks = Math.max(200, 500 * (timeLeft / duration));
+        skew = Math.max(0.8, skew - 0.001);
+
+        canvas.confetti({
+          particleCount: 1,
+          startVelocity: 0,
+          ticks,
+          origin: {
+            x: Math.random(),
+            y: Math.random() * skew - 0.2,
+          },
+          colors: ["#ffffff"],
+          shapes: ["circle"],
+          gravity: randomInRange(0.4, 0.6),
+          scalar: randomInRange(0.4, 1),
+          drift: randomInRange(-0.4, 0.4),
+        });
+
+        if (timeLeft > 0) {
+          requestAnimationFrame(letItSnow);
+        }
+      };
+
+      letItSnow();
+
+      const button = document.querySelector("button");
+
+      button.addEventListener("click", fire);
+
+    </script>
+  </body>
+</html>
